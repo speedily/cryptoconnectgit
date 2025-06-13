@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "cryptoconnect/src/agent-index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "cryptoconnect/src/agent-index.ts"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+} 
