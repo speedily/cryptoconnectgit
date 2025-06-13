@@ -43,8 +43,11 @@ export default async function handler(req: any, res: any) {
         getChainId: () => BigInt(8453), // Base mainnet chain ID
       };
 
-      // Get encryption key
-      const encryptionKey = Buffer.from(XMTP_ENCRYPTION_KEY, 'hex');
+      // Get encryption key - ensure it's exactly 32 bytes
+      const encryptionKey = new Uint8Array(Buffer.from(XMTP_ENCRYPTION_KEY, 'hex'));
+      if (encryptionKey.length !== 32) {
+        throw new Error('Encryption key must be exactly 32 bytes');
+      }
       
       // Create XMTP client
       client = await Client.create(signer, {
