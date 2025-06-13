@@ -1,8 +1,6 @@
 # CryptoConnect
 
-A Social Trading & Community Building Agent built on Base and XMTP
-
-Detailed Document : https://github.com/speedily/cryptoconnectgit/blob/main/cryptoconnect/cryptoconnectoverview.md
+A Social Trading & Community Building Agent built on Base and XMTP.
 
 ## Features
 
